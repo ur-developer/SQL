@@ -1,3 +1,32 @@
+-- *로 테이블 전체 열 출력하기
+SELECT*FROM EMP;
+
+-- 테이블 부분 열 출력하기
+
+SELECT EMPNO, ENAME, DEPTNO
+FROM EMP;
+
+-- EMP 테이블에서 DEPTNO 확인
+SELECT DEPTNO
+FROM EMP;
+
+-- DISTINCT로 열 중복 제거하기(열이 한개 인 경우)
+SELECT DISTINCT DEPTNO
+FROM EMP;
+
+-- DISTINCT로 열 중복 제거하기(열이 여러 개인 경우)
+SELECT DISTINCT JOB, DEPTNO
+FROM EMP;
+SELECT ENAME, SAL, SAL*12+COMM
+FROM EMP;
+
+-- 별칭을 지정하는 방식
+SELECT ENAME, SAL, SAL*12+COMM AS ANNSAL,
+COMM FROM EMP;
+
+-- 각각의 열에 내림차순과 올림차순 동시에 사용하기
+SELECT*FROM EMP e ORDER BY DEPTNO ASC, SAL DESC;
+
 SELECT * FROM EMP
 WHERE DEPTNO = 30
 OR  JOB = 'CLERK'
